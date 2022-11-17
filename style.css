@@ -35,6 +35,10 @@ header,
   padding: 16px;
 }
 
+.post {
+  border-bottom: 16px solid #c6c6c6;
+}
+
 /* images */
 .logo {
   height: 33px;
@@ -52,4 +56,3 @@ header,
 .icons img {
   width: 23px;
 }
-
