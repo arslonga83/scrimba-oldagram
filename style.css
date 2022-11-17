@@ -6,6 +6,7 @@ body {
   background: #c6c6c6;
 }
 
+/* layout */
 .container {
   width: 375px;
   margin: 0 auto;
@@ -15,10 +16,26 @@ body {
 header {
   display: flex;
   justify-content: space-between;
-  padding: 16px;
   border-bottom: 1px solid #c6c6c6;
 }
 
+.post-header {
+  display: flex;
+  align-items: center;
+}
+
+.post-header h4,
+.post-header p {
+  margin: 0 8px;
+}
+
+header,
+.post-header,
+.post-footer {
+  padding: 16px;
+}
+
+/* images */
 .logo {
   height: 33px;
 }
@@ -36,17 +53,3 @@ header {
   width: 23px;
 }
 
-.post-header {
-  padding: 16px;
-  display: flex;
-  align-items: center;
-}
-
-.post-header h4,
-.post-header p {
-  margin: 0 8px;
-}
-
-.post-footer {
-  padding: 16px;
-}
