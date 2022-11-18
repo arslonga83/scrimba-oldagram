@@ -31,6 +31,7 @@ const posts = [
 const mainSection = document.querySelector("#main-section")
 
 function renderPosts() {
+  mainSection.innerHTML = ''
   for (let i = 0; i < posts.length; i++) {
     mainSection.innerHTML += `
       <section class="post">
@@ -44,7 +45,7 @@ function renderPosts() {
       <img class="post-img" src=${posts[i].post} alt="selfie of user">
       <div class="post-footer">
         <div class="icons">
-          <img src="./images/icon-heart.png" alt="heart icon">
+          <img class="like-btn" src="./images/icon-heart.png" alt="heart icon">
           <img src="./images/icon-comment.png" alt="speech bubble">
           <img src="./images/icon-dm.png" alt="envelope icon">
         </div>
@@ -57,4 +58,16 @@ function renderPosts() {
   }
 }
 
+function likeBtn() {
+  const buttons = document.querySelectorAll('.like-btn');
+  for (let i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener('click', () => {
+      posts[i].likes += 1;
+      renderPosts()
+      likeBtn()
+    })
+  }
+}
+
 renderPosts()
+likeBtn()
