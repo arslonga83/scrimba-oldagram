@@ -68,14 +68,13 @@ function likeBtn() {
       if (!liked) {
         buttons[i].src = "./images/heart.png";
         posts[i].likes += 1;
-        likes[i].textContent = `${posts[i].likes} likes`;
         liked = true;
       } else {
         buttons[i].src = "./images/icon-heart.png";
         posts[i].likes -= 1;
-        likes[i].textContent = `${posts[i].likes} likes`;
         liked = false;
       }
+      likes[i].textContent = `${posts[i].likes} likes`;
     })
   }
 }
