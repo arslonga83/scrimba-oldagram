@@ -49,7 +49,7 @@ function renderPosts() {
           <img src="./images/icon-comment.png" alt="speech bubble">
           <img src="./images/icon-dm.png" alt="envelope icon">
         </div>
-        <h4>${posts[i].likes} likes</h4>
+        <h4 class="likes">${posts[i].likes} likes</h4>
         <p><span class="username">${posts[i].username}</span> ${posts[i].comment}</p>
       </div>
     </section>
@@ -60,12 +60,12 @@ function renderPosts() {
 
 function likeBtn() {
   const buttons = document.querySelectorAll('.like-btn');
+  const likes = document.querySelectorAll('.likes')
   for (let i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener('click', () => {
-      // buttons[i].src = "./images/heart.png" 
+      buttons[i].src = "./images/heart.png";
       posts[i].likes += 1;
-      renderPosts()
-      likeBtn()
+      likes[i].textContent = `${posts[i].likes} likes`;
     })
   }
 }
