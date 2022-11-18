@@ -39,7 +39,7 @@ header,
   border-bottom: 16px solid #c6c6c6;
 }
 
-/* images */
+/* images and usernames */
 .logo {
   height: 33px;
 }
@@ -55,4 +55,8 @@ header,
 
 .icons img {
   width: 23px;
+}
+
+.username {
+  font-weight: bold;
 }
