@@ -61,10 +61,11 @@ function renderPosts() {
 function likeBtn() {
   const buttons = document.querySelectorAll('.like-btn');
   const likes = document.querySelectorAll('.likes');
-  let liked = false;
+  
   for (let i = 0; i < buttons.length; i++) {
+    let liked = false;
     buttons[i].addEventListener('click', () => {
-      if (liked === false) {
+      if (!liked) {
         buttons[i].src = "./images/heart.png";
         posts[i].likes += 1;
         likes[i].textContent = `${posts[i].likes} likes`;
