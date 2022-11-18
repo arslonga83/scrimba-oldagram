@@ -60,12 +60,21 @@ function renderPosts() {
 
 function likeBtn() {
   const buttons = document.querySelectorAll('.like-btn');
-  const likes = document.querySelectorAll('.likes')
+  const likes = document.querySelectorAll('.likes');
+  let liked = false;
   for (let i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener('click', () => {
-      buttons[i].src = "./images/heart.png";
-      posts[i].likes += 1;
-      likes[i].textContent = `${posts[i].likes} likes`;
+      if (liked === false) {
+        buttons[i].src = "./images/heart.png";
+        posts[i].likes += 1;
+        likes[i].textContent = `${posts[i].likes} likes`;
+        liked = true;
+      } else {
+        buttons[i].src = "./images/icon-heart.png";
+        posts[i].likes -= 1;
+        likes[i].textContent = `${posts[i].likes} likes`;
+        liked = false;
+      }
     })
   }
 }
