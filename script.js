@@ -62,6 +62,7 @@ function likeBtn() {
   const buttons = document.querySelectorAll('.like-btn');
   for (let i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener('click', () => {
+      // buttons[i].src = "./images/heart.png" 
       posts[i].likes += 1;
       renderPosts()
       likeBtn()
